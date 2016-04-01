@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><!-- Head-->
+    <meta charset="utf-8">
+    <title>OpenOS - Полезности Программистам</title>
+    <link rel="stylesheet" href="/css/main.css"><!-- Main Stylesheet-->
+    	<!-- Bootstrap-->
+    	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    	
+    	<link rel="shortcut icon" href='http://computercraft.ru/favicon.ico' />
+     <link rel="image_src" href='http://computercraft.ru/public/style_images/master/meta_image.png' />
+	</head><!-- End of Head-->
+  <body>
+  	  <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Полезности Программистам</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Lua 5.2.3</a></li>
+            <li class="active"><a href="/openos.html">OpenOS (dev)</a></li>
+            <li><a href="http://computercraft.ru/">CC.RU</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/about.html">О Проекте</a></li>
+            <li><a href="/feedback.html">Контакты</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  		<div style="margin-left:3%; margin-top: 4%;">
+  			<!-- Screen :D-->
+			<canvas id="canvas" width="1220" height="610">Что за хренотень? У вас не поддерживается Canvas! Вы что на IE???</canvas>
+		</div> 
+		
+		<script>
+		 	//func
+		 	function set(ct,x,y,bg,fg,txt) 
+		 	{
+		 		var x = x * 8 - 8;
+		 		var y = y * 14.4 - 14.4;
+		 		
+		 		if(txt.length<2) {
+		 			ct.clearRect(x,y,8*txt.length,14.4)
+		 			ct.fillStyle = bg;
+					ct.fillRect(x,y,8*txt.length,14.4);
+				
+					
+					ct.fillStyle = fg;
+					ct.font = "14px Arial";
+					ct.fillText(txt,x+0.4,y+12);
+				} else {
+					ct.clearRect(x,y,8*txt.length,14.4)
+		 			ct.fillStyle = bg;
+					ct.fillRect(x,y,8*txt.length,14.4);
+					
+					ct.fillStyle = fg;
+					ct.font = "14px Arial";
+					
+					for(i=0;i<txt.length;i++) {
+						var chunk = txt[i];
+						
+						ct.fillText(chunk,x+(i*8),y+12.6);
+					}
+				}
+		 	}
+			var canvas = document.getElementById('canvas');
+		  var ctx = canvas.getContext("2d");		   
+		  //bg
+		 	ctx.fillStyle = "#000";
+			ctx.fillRect(0,0,canvas.width,canvas.height);
+			
+			for(x=0;x<10;x++)
+			{
+				for(y=0;y<10;y++)
+				{	
+					if(y%2!=0)
+					{
+						//set(ctx,x+1,y+1,"#f00","#fff","a");
+						if(x%2!=0) {
+							set(ctx,x+1,y+1,"#f00","#fff","a");
+						} else {
+						  set(ctx,x+1,y+1,"#ff0","#000","a");
+						}
+					} else if(y%2==0){
+						if(x%2!=0) {
+							set(ctx,x+1,y+1,"#00f","#fff","a");
+						} else {
+						  set(ctx,x+1,y+1,"#0f0","#000","a");
+						}
+					}	
+				}
+			}
+			for(i=0;i<201;i++) 
+				set(ctx,i+1,11,"rgb("+(i+50)+",0,0)","#fff","1");
+			set(ctx,1,12,"#fff","#000", " ");
+			set(ctx,1,1,"#f00","#000","2");
+			set(ctx,1,13,"#f00", "#fff", "Тут ошибка! DebugTime! Текст занимает не все предназначенное на него место.");
+			set(ctx,1,14,"#00f","#fff","Дебильная муха! Улетай!")
+			set(ctx,1,15,"#0ff","#000","Починил! Теперь можно отдохнуть!..")
+		</script>
+		
+		
+		<!-- Copyright. :З-->
+		<div class="jumbotron" style="padding-left: 5%; padding-right: 5%; margin: 3%;">
+  	  		No Rights Reserved | LeshaInc&nbsp;&nbsp;&nbsp;
+  	  		 <!-- Yandex.Metrika informer --><a href="https://metrika.yandex.ru/stat/?id=31495253&amp;from=informer"target="_blank" rel="nofollow"><img src="https://mc.yandex.ru/informer/31495253/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:31495253,lang:'ru'});return false}catch(e){}" /></a><!-- /Yandex.Metrika informer --> <!-- Yandex.Metrika counter --><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter31495253 = new Ya.Metrika({ id:31495253, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/31495253" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+  	  	</div>
+	</body>
+</html>

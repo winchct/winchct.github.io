@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><!-- Head-->
+    <meta charset="utf-8">
+    <title>Lua Online - Полезности Программистам</title>
+    <link rel="stylesheet" href="/css/main.css"><!-- Main Stylesheet-->
+    	<!-- Bootstrap-->
+    	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    	
+    	<link rel="shortcut icon" href='http://computercraft.ru/favicon.ico' />
+        <link rel="image_src" href='http://computercraft.ru/public/style_images/master/meta_image.png' />
+	</head><!-- End of Head-->
+  <body>
+  	  <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Полезности Программистам</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Lua 5.2.3</a></li>
+            <li><a href="/openos.html">OpenOS (dev)</a></li>
+            <li><a href="http://computercraft.ru/">CC.RU</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/about.html">О Проекте</a></li>
+            <li><a href="/feedback.html">Контакты</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  	
+  		<!--<h2>Разбираюсь с экраном :З, интерпретатор ниже</h2>
+  	  <canvas id="canvas" width="790" height="400"></canvas>
+		<script>
+		    var canvas = document.getElementById('canvas');
+		    var ctx = canvas.getContext("2d");		    
+		    // inital background
+		    ctx.fillStyle="#0f0";
+		    ctx.fillRect(0,0,canvas.width,canvas.height);
+		    // wrap text
+		    function print(ctx,txt,bg,fg,y,x) // x, y знакоместа
+		    {
+		    		// margin left
+		    		var x = x*12-10
+		    		// margin top
+		    		var y = y*7.3-6
+		    		
+		    		//alert(x+" "+y)
+		    		
+		    		var len = txt.length
+		    		if(len+1<100) 
+		    		{
+		    			ctx.fillStyle=bg;
+		    			ctx.fillRect(y,x,7.5,12);
+		    			return;
+		    		}
+		    }
+		    // txt
+		    ctx.fillStyle = "#FFF";
+		    ctx.font = "1em Unifont";
+		    //ctx.fillText("hello canvas :D", 12, 18 );  
+		    print(ctx,"a","#f00","#fff",1,1
+		    print(ctx,"a","rgba(0,255,0,0.5)","#fff",2,1)
+		    print(ctx,"a","#f00","#fff",1,2)
+		    print(ctx,"a","#0ff","#fff",2,2))
+		</script>-->
+    	
+  	  <!-- Code Area-->
+  	  <div class="jumbotron" style="padding-left: 5%; padding-right: 5%; margin: 3%;">
+  	  		<h2 style="margin-top: -2%;">Введи Код</h2>
+    		<textarea class="form-control" rows="3" id="code"> for i=1,128 do 
+    print(i.." floppy(s) on the table.\nSpace on the floppy over. Go to the store and buy another floppy.\n—————\n") 
+end 
+print("Invented hard drives. Floppy disks are no longer needed. Go to the store and buy a hard drive.") </textarea><br>
+    		<button class="btn btn-warning" onclick="document.getElementById('code').value = '';">Очистить</button>
+    	</div>
+    <!-- Execute Button-->
+    <div class="jumbotron" style="padding-left: 5%; padding-right: 5%; margin: 3%;">
+    		<h2 style="margin-top: -2%;">Нажми на Кнопку</h2>
+    		<button style="margin-top: 3%;" class="btn btn-success" onclick="executeLua(document.getElementById('code').value, true); return false">Выполнить</button>
+    	</div>
+    	<!-- Result-->
+    	<div class="jumbotron" style="padding-left: 5%; padding-right: 5%; margin: 3%;">
+    		<h2 style="margin-top: -2%;">Получи Результат</h2>
+    		<button class="btn btn-warning" onclick="document.getElementById('output').innerHTML = '';">Очистить</button>
+    		<a href="http://computercraft.ru/user/13067-leshainc/" class="btn btn-info">Связаться с Автором</a>
+ 			<div id="output"> </div>	
+ 			<a href="#" class="btn btn-primary" style="margin-top: 2%;">Наверх ↑</a>
+		</div>
+		 <!-- Copyright. :З-->
+		<div class="jumbotron" style="padding-left: 5%; padding-right: 5%; margin: 3%;">
+  	  		No Rights Reserved | LeshaInc&nbsp;&nbsp;&nbsp;
+  	  		 <!-- Yandex.Metrika informer --><a href="https://metrika.yandex.ru/stat/?id=31495253&amp;from=informer"target="_blank" rel="nofollow"><img src="https://mc.yandex.ru/informer/31495253/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:31495253,lang:'ru'});return false}catch(e){}" /></a><!-- /Yandex.Metrika informer --> <!-- Yandex.Metrika counter --><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter31495253 = new Ya.Metrika({ id:31495253, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/31495253" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+  	  	</div>
+  	  	<script src="/js/scripts.js"></script> <!-- Main Scripts--> 	
+		<script src="http://kripken.github.io/mloc_emscripten_talk/lua/lua.vm.js"></script> <!-- LuaVM.js-->
+	</body>
+</html>
